@@ -1,5 +1,13 @@
-#include <unistd.h>
+/*
+	Fizbuzz
+ 		While the number is less than 100, sum + 1
+   			if this number is multiple
 
+*/
+
+
+
+#include <unistd.h>
 
 void	ft_putnbr(int nbr)
 {
