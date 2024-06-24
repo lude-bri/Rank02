@@ -1,10 +1,5 @@
 #include <stdio.h>
 
-//enquanto o valor do index for menor que o numero de elementos do array
-//	se o valor desse elemento for maior que max, retorna o max
-//		se nao for, agora o max vai ser esse valor;
-//		REPITIR ATE ENCONTRAR O MAIOR;
-
 int	max(int *tab, unsigned int len)
 {
 	int i = 0;
