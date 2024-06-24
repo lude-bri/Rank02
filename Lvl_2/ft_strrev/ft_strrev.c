@@ -22,7 +22,6 @@ char *ft_strrev(char *str)
 int	main(void)
 {
 	char str[] = "Hello, World";
-	char *str = "Hello, World";
 
 	printf("%s\n", ft_strrev(str));
 	return (0);
