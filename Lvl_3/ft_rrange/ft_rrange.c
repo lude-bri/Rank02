@@ -7,19 +7,6 @@ int abs(int nbr)
 }
 
 /*
-int *ft_rrange(int start, int end)
-{
-	int range = abs(end - start) + 1;
-	int *arr = malloc(sizeof(int) * range);
-
-	while (range--)
-	{
-		arr[range] = ((end >= start) ? start++ : start--);
-	}
-	return(arr);
-}
-*/
-/*
 int	*ft_range(int start, int end)
 {
 	int range = abs(end - start);
