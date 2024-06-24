@@ -1,7 +1,10 @@
 /*
 	Fizbuzz
  		While the number is less than 100, sum + 1
-   			if this number is multiple
+   			If the number is both a multiple of 3 and a multiple of 5, it prints 'fizzbuzz'.
+      			Else If the number is a multiple of 3, it prints 'fizz' instead.
+	 		Else If the number is a multiple of 5, it prints 'buzz' instead.
+    			If the number do not satisfy any of those conditions, simply write the number
 
 */
 
