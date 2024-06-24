@@ -14,7 +14,6 @@ char *ft_strchr(char *str, char c)
 
 size_t ft_strspn(const char *s, const char *accept)
 {
-//precisamos retornar a len dos elementos encontrados em s. TODOS ELES DEVEM ESTAR NO ACCEPT.
 	int len = 0;
 
 	while (s[len])
