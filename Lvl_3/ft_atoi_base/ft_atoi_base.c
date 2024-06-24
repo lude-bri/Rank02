@@ -73,66 +73,6 @@ int main(int ac, char **av)
 }
 
 
-//////////////////
-///
-///
-///Atoi base////
-
-
-int ft_atoi_base(const char *str, int str_base)
-{
-	int i = 0, sign = 1, result = 0;
-
-	while (str[i] && ft_is_space(str[i]))
-		i++;
-	while (str[i] == '+' || str[i] == '-')
-	{
-		if (str[i] == '-')
-			sign *= -1;
-		i++;
-	}
-	while (str[i] && ft_is_valid(str[i], str_base))
-	{
-		result *= str_base;
-		if (str[i] >= '0' && str[i] <= '9')
-			result += str[i] - '0';
-		else if (str[i] >= 'a' && str[i] <= 'f')
-			result += str[i] - 'a' + 10;
-		else if (str[i] >= 'A' && str[i] <= 'F')
-			result += str[i] - 'A' + 10;
-		i++;
-	}
-	return (result * sign);
-}
-
-int ft_is_valid(char ch, int baselen)
-{
-	int i = 0;
-	char *lower_base = "0123456789abcdef";
-	char *upper_base = "0123456789ABCDEF";
-
-	while (i < baselen)
-	{
-		if ((ch == lower_base[i]) || (ch == upper_base[i]))
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
