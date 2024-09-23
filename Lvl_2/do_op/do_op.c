@@ -1,34 +1,26 @@
 /*
-Assignment name  : do_op
-Expected files   : *.c, *.h
-Allowed functions: atoi, printf, write
---------------------------------------------------------------------------------
+	do_op
 
-Write a program that takes three strings:
-- The first and the third one are representations of base-10 signed integers
-  that fit in an int.
-- The second one is an arithmetic operator chosen from: + - * / %
+	This program performs basic arithmetic operations (addition, subtraction, multiplication, division, and modulus) 
+	on two integers based on the operator provided as the second argument. The program expects exactly three arguments:
+	- The first and third arguments are the two numbers (as strings).
+	- The second argument is the operator (as a string with a single character: '+', '-', '*', '/', or '%').
 
-The program must display the result of the requested arithmetic operation,
-followed by a newline. If the number of parameters is not 3, the program
-just displays a newline.
-
-You can assume the string have no mistakes or extraneous characters. Negative
-numbers, in input or output, will have one and only one leading '-'. The
-result of the operation fits in an int.
-
-Examples:
-
-$> ./do_op "123" "*" 456 | cat -e
-56088$
-$> ./do_op "9828" "/" 234 | cat -e
-42$
-$> ./do_op "1" "+" "-43" | cat -e
--42$
-$> ./do_op | cat -e
-$
+	- We check if the number of arguments (`argc`) is 4, meaning the program is called with two numbers and one operator.
+	- If valid:
+		- We initialize an index `i` to 0 to iterate through the operator string (`argv[2]`).
+		- The loop runs while the current character in the operator string (`argv[2][i]`) is not null:
+			- Depending on the character:
+				- If the character is '+', add the two numbers (convert them to integers using `atoi`).
+				- If the character is '-', subtract the second number from the first.
+				- If the character is '*', multiply the two numbers.
+				- If the character is '/', divide the first number by the second.
+				- If the character is '%', compute the modulus of the first number divided by the second.
+			- Print the result of the operation using `printf`.
+			- Increment `i` to move to the next character (though in this case the operator string should be only one character).
+	- After processing the operator, print a newline (`'\n'`).
+	- Finally, return `0` to indicate successful execution.
 */
-
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
