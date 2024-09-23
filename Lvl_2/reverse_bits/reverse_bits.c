@@ -17,7 +17,6 @@
 	
 	- Once the loop is complete, `rev` will contain the reversed bit sequence of `octet`, and the function returns `rev`.
 */
-
 unsigned char reverse_bits(unsigned char octet)
 {
 	unsigned int n = 8;
