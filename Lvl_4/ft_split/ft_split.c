@@ -1,18 +1,16 @@
 #include <stdlib.h>
 
+/*
+	ft_split
 
-char ft_strncpy(char *s1, char *s2, int n)
-{
-	int i = 0;
-	while (i < n && s2[i])
-	{
-		s1[i] = s2[i];
-		i++;
-	}
-	s1[i] = '\0';
-	return (s1);
-}
+	This function splits a string `str` into an array of words, using spaces and tabs as delimiters.
 
+	- We first loop through the string to count how many words are present. A word is a sequence of non-space characters.
+	- Then we allocate memory for an array of strings, with each string representing a word.
+	- We go through the string again, extracting each word and copying it into the allocated array using `ft_strncpy`.
+	
+	- The function returns the array of strings, with the last element being `NULL` to mark the end of the array.
+*/
 char **ft_split(char *str)
 {
 	int i = 0;
@@ -48,4 +46,16 @@ char **ft_split(char *str)
 		split[k] = NULL;
 	}
 	return (split);
+}
+
+char ft_strncpy(char *s1, char *s2, int n)
+{
+	int i = 0;
+	while (i < n && s2[i])
+	{
+		s1[i] = s2[i];
+		i++;
+	}
+	s1[i] = '\0';
+	return (s1);
 }
