@@ -1,5 +1,49 @@
 #include <unistd.h>
 
+/*
+	add_prime_sum
+
+	This program takes an integer as an argument and calculates the sum of all prime numbers less than or equal to that integer.
+	If no argument is provided, the program prints `0`.
+
+	- We check if the number of arguments (`ac`) is 2, meaning the program is called with one number as input.
+	
+	- If valid:
+		- We initialize `result` to 0, which will store the sum of prime numbers.
+		- We convert the input string `av[1]` to an integer using `ft_atoi` and store it in `nbr`.
+		
+		- The loop runs while `nbr` is greater than 0:
+			- If the current number `nbr` is prime (checked using `ft_is_prime`), add it to `result`.
+			- Decrement `nbr` to check the next number.
+		
+		- After the loop completes, the sum of all prime numbers less than or equal to the input is stored in `result`.
+		- We print `result` using `ft_putnbr`.
+	
+	- If the number of arguments is not 2, the program prints `0`.
+	
+	- Finally, print a newline (`'\n'`) and return `0` to indicate successful execution.
+*/
+int main (int ac, char **av)
+{
+	if (ac == 2)
+	{
+		int result = 0;
+		int nbr = ft_atoi(av[1]);
+
+		while (nbr > 0)
+		{
+			if (ft_is_prime(nbr))
+				result += nbr;
+			nbr--;
+		}
+		ft_putnbr(result);
+	}
+	else
+		write (1, "0", 1);
+	write (1, "\n", 1);
+	return (0);
+}
+
 //ft_is_digit
 int	ft_is_digit(char c)
 {
@@ -47,26 +91,3 @@ void	ft_putnbr(int nbr)
 		ft_putnbr(nbr / 10);
 	write (1, &"0123456789"[nbr % 10], 1);
 }
-
-
-int main (int ac, char **av)
-{
-	if (ac == 2)
-	{
-		int result = 0; //resultado das somas;
-		int nbr = ft_atoi(av[1]); //nosso numero;
-
-		while (nbr > 0)
-		{
-			if (ft_is_prime(nbr))
-				result += nbr;
-			nbr--;
-		}
-		ft_putnbr(result);
-	}
-	else
-		write (1, "0", 1);
-	write (1, "\n", 1);
-	return (0);
-}
-
