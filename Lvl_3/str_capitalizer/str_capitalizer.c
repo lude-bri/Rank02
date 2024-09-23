@@ -1,34 +1,22 @@
-/*/Assignment name  : str_capitalizer
-Expected files   : str_capitalizer.c
-Allowed functions: write
---------------------------------------------------------------------------------
+#include <unistd.h>
 
-Write a program that takes one or several strings and, for each argument,
-capitalizes the first character of each word (If it's a letter, obviously),
-puts the rest in lowercase, and displays the result on the standard output,
-followed by a \n.
+/*
+	str_capitalizer
 
-A "word" is defined as a part of a string delimited either by spaces/tabs, or
-by the start/end of the string. If a word only has one letter, it must be
-capitalized.
+	This function takes a string and capitalizes the first letter of each word while converting the rest of the letters to lowercase.
+	- A word is defined as a sequence of non-space and non-tab characters, and the beginning of a word is identified by checking if the preceding character is a space or a tab.
 
-If there are no arguments, the progam must display \n.
+	- We initialize `i` to 0 to iterate through the string `str`.
 
-Example:
+	- The first character in the string is handled separately:
+		- If the first character is a lowercase letter, it is converted to uppercase by subtracting 32 from its ASCII value.
+		- The character is then written to the standard output.
 
-$> ./str_capitalizer | cat -e
-$
-$> ./str_capitalizer "a FiRSt LiTTlE TESt" | cat -e
-A First Little Test$
-$> ./str_capitalizer "__SecONd teST A LITtle BiT   Moar comPLEX" "   But... This iS not THAT COMPLEX" "     Okay, this is the last 1239809147801 but not    the least    t" | cat -e
-__second Test A Little Bit   Moar Complex$
-   But... This Is Not That Complex$
-     Okay, This Is The Last 1239809147801 But Not    The Least    T$
-$>
+	- The loop processes each remaining character in the string:
+		- If the current character is an uppercase letter, it is converted to lowercase by adding 32 to its ASCII value.
+		- If the current character is a lowercase letter and is the first character of a word (preceded by a space or a tab), it is converted to uppercase.
+		- After processing, the character is written to the standard output.
 */
-
-include <unistd.h>
-
 void	str_capitalizer(char *str)
 {
 	int i = 0;
