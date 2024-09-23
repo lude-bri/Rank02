@@ -7,7 +7,7 @@
 	This function creates an array of integers, starting from `start` and ending at `end`.
 	The array is dynamically allocated, and its size is based on the absolute difference between `start` and `end`.
 
-	- We initialize three variables:
+	- We initialise three variables:
 		- `arr` is a pointer to the dynamically allocated array that will hold the range of integers.
 		- `range` is the absolute difference between `start` and `end`, which determines the size of the array.
 		- `i` is used as an index to traverse and fill the array.
