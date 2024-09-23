@@ -1,5 +1,20 @@
 #include <stdio.h>
 
+/*
+	sort_int_tab
+
+	This function sorts an array of integers in ascending order using a simple sorting algorithm (similar to Bubble Sort).
+
+	- Parameters:
+		- `tab`: A pointer to the array of integers to be sorted.
+		- `size`: The number of elements in the array.
+	
+	- The function uses a `while` loop to traverse the array and compare adjacent elements.
+		- If an element is greater than the next one, the two elements are swapped.
+		- After a swap, the index `i` is reset to 0 to restart the process, ensuring that the smallest elements "bubble" to the front.
+		- If no swap is needed, `i` is incremented, moving to the next pair of elements.
+		- The loop continues until the entire array is sorted.
+*/
 void	sort_int_tab(int *tab, unsigned int size)
 {
 	int i = 0;
