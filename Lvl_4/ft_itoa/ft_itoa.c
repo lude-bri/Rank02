@@ -1,6 +1,23 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/*
+	ft_itoa
+
+	This function converts an integer `nbr` to its string representation.
+
+	- We first calculate the length of the string needed to represent the number.
+		- If the number is negative, we add an extra character for the negative sign.
+		- If the number is zero, we return the string "0".
+	
+	- After calculating the length, we allocate memory for the result string, ensuring that it is large enough to hold all digits and the null terminator.
+
+	- If `nbr` is negative, we handle the sign and convert `nbr` to its positive equivalent.
+
+	- We then fill the string from right to left, placing each digit at the correct position.
+
+	- The function returns the string representation of `nbr`.
+*/
 char *ft_itoa(int nbr)
 {
 	int len = 0;
