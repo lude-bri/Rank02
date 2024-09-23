@@ -1,5 +1,32 @@
 #include <unistd.h>
 
+/*
+	rostring
+
+	This program processes a string passed as a command-line argument and moves the first word of the string to the end of the string, maintaining the rest of the words in place.
+	It trims extra spaces and ensures only one space separates each word.
+
+	- If the number of arguments (`ac`) is greater than or equal to 2, the function proceeds with the processing:
+		- `str` is set to point to the first argument (`av[1]`), which is the input string.
+		- `c` is used to iterate through the string.
+	
+	- First, the program skips leading spaces using a `while` loop, and sets `word_start` to mark the start of the first word.
+		- The first word is identified by skipping spaces and stopping at the first non-space character.
+		- The `word_end` is set to mark the end of the first word.
+	
+	- After identifying the first word, the program skips any trailing spaces between words and begins processing the rest of the string.
+	
+	- The main loop processes the rest of the string:
+		- It skips multiple spaces between words, ensuring that only one space is printed between them.
+		- If a space is found, `space_found` is set to 1, which signals that a space should be printed before appending the first word later.
+		- The program writes each non-space character as part of the remaining words.
+	
+	- Once the main loop finishes, the program checks if a space was found during processing (`space_found`):
+		- If so, it prints a space to separate the first word, which will be moved to the end.
+		- The first word, identified earlier using `word_start` and `word_end`, is printed after the rest of the string has been processed.
+
+	- Finally, the program prints a newline.
+*/
 int ft_isspace(char c)
 {
 	return ((c == ' ') || (c == '\t'));
