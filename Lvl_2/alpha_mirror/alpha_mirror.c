@@ -1,34 +1,22 @@
 /*
-Assignment name  : alpha_mirror
-Expected files   : alpha_mirror.c
-Allowed functions: write
---------------------------------------------------------------------------------
+	alpha_mirror
 
-Write a program called alpha_mirror that takes a string and displays this string
-after replacing each alphabetical character by the opposite alphabetical
-character, followed by a newline.
+	This program takes a string as an argument and applies the "Atbash cipher" to each alphabetic character.
+	The Atbash cipher mirrors letters such that 'A' becomes 'Z', 'B' becomes 'Y', and so on. The same applies for lowercase letters.
 
-'a' becomes 'z', 'Z' becomes 'A'
-'d' becomes 'w', 'M' becomes 'N'
-
-and so on.
-
-Case is not changed.
-
-If the number of arguments is not 1, display only a newline.
-
-Examples:
-
-$>./alpha_mirror "abc"
-zyx
-$>./alpha_mirror "My horse is Amazing." | cat -e
-Nb slihv rh Znzarmt.$
-$>./alpha_mirror | cat -e
-$
-$>
-
+	- We check if the number of arguments (`argc`) is 2, meaning the program is called with one argument.
+	- If valid:
+		- We initialize an index `i` to 0 to iterate through the string (`argv[1]`).
+		- The loop runs while the current character in the string (`argv[1][i]`) is not null:
+			- If the character is an uppercase letter (ASCII 65 to 90):
+				- Apply the Atbash cipher by setting `argv[1][i]` to `90 - argv[1][i] + 65` (this mirrors the uppercase letter).
+			- If the character is a lowercase letter (ASCII 97 to 122):
+				- Apply the Atbash cipher by setting `argv[1][i]` to `122 - argv[1][i] + 97` (this mirrors the lowercase letter).
+			- Write the transformed character to the standard output.
+			- Increment `i` to move to the next character.
+	- After all characters have been processed, print a newline (`'\n'`).
+	- Finally, return `0` to indicate successful execution.
 */
-
 #include <unistd.h>
 
 int main(int argc, char *argv[])
