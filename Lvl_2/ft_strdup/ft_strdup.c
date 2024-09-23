@@ -1,6 +1,27 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/*
+	ft_strdup
+
+	This function allocates memory and duplicates the given string `src` into a newly allocated space in memory.
+
+	- We initialize two variables:
+		- `i` to 0, which will be used to copy the characters from `src`.
+		- `len` to 0, which will store the length of the source string `src`.
+	
+	- First, we calculate the length of the string `src` by iterating through it until the null terminator.
+		- The length is stored in `len`.
+	
+	- We then allocate memory for the duplicate string `dup`, using `malloc`. 
+		- The size of memory allocated is the length of the string (`len`) plus 1 to account for the null terminator.
+		- If `malloc` fails and returns `NULL`, the function returns `NULL` to indicate failure.
+	
+	- After memory allocation, we copy the characters from `src` to `dup` one by one, including the null terminator.
+		- We use a loop to copy each character and increment `i` until all characters (and the null terminator) are copied.
+	
+	- Finally, we return the pointer to the newly duplicated string `dup`.
+*/
 char	*ft_strdup(char *src)
 {
 	int i = 0;
