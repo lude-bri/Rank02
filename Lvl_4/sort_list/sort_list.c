@@ -8,25 +8,23 @@ typedef struct	s_list
 
 }	t_list;
 
-int ascending(int a, int b)
-{
-	return (a <= b);
-}
+/*
+	sort_list
 
-int desceding(int a, int b)
-{
-	return (a >= b);
-}
+	This function sorts a linked list of integers in ascending order using a comparison function `cmp`.
 
-void	ft_swap(int *a, int *b)
-{
-	int tmp;
-
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
-}
-
+	- Parameters:
+		- `lst`: A pointer to the first node of the linked list.
+		- `cmp`: A comparison function that takes two integers and returns 0 if they are in the correct order (ascending).
+	
+	- The function works similarly to Bubble Sort, iterating through the list and swapping elements if they are in the wrong order.
+	
+	- If a swap is made, the iteration restarts from the beginning of the list to ensure all elements are correctly ordered.
+		- `lst_start` is used to store the head of the list, so we can return to the start of the list when needed.
+		- The function continues iterating until no more swaps are needed.
+	
+	- The function returns the pointer to the sorted list.
+*/
 t_list *sort_list(t_list *lst, int (*cmp)(int, int))
 {
 	t_list *lst_start;
@@ -47,6 +45,25 @@ t_list *sort_list(t_list *lst, int (*cmp)(int, int))
 	}
 	lst = lst_start;
 	return (lst);
+}
+
+int ascending(int a, int b)
+{
+	return (a <= b);
+}
+
+int desceding(int a, int b)
+{
+	return (a >= b);
+}
+
+void	ft_swap(int *a, int *b)
+{
+	int tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }
 
 int main (void)
