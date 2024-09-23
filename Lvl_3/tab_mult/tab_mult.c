@@ -1,47 +1,18 @@
-/*
- * Assignment name  : tab_mult
-Expected files   : tab_mult.c
-Allowed functions: write
---------------------------------------------------------------------------------
-
-Write a program that displays a number's multiplication table.
-
-The parameter will always be a strictly positive number that fits in an int,
-and said number times 9 will also fit in an int.
-
-If there are no parameters, the program displays \n.
-
-Examples:
-
-$>./tab_mult 9
-1 x 9 = 9
-2 x 9 = 18
-3 x 9 = 27
-4 x 9 = 36
-5 x 9 = 45
-6 x 9 = 54
-7 x 9 = 63
-8 x 9 = 72
-9 x 9 = 81
-$>./tab_mult 19
-1 x 19 = 19
-2 x 19 = 38
-3 x 19 = 57
-4 x 19 = 76
-5 x 19 = 95
-6 x 19 = 114
-7 x 19 = 133
-8 x 19 = 152
-9 x 19 = 171
-$>
-$>./tab_mult | cat -e
-$
-$>
-*/
 #include <unistd.h>
 
+/*
+	tab_mult
 
-//atoi
+	This program takes a single integer as input and prints its multiplication table from 1 to 9.
+	- If the number of arguments (`ac`) is not 2, the program simply prints a newline and exits.
+
+	- If a valid integer is provided:
+		- The function converts the input string to an integer using `ft_atoi`.
+		- The program then iterates from 1 to 9, printing each multiplication in the format:
+			`i x n = result`, where `i` is the current number (from 1 to 9), `n` is the input number, and `result` is the product of `i * n`.
+
+	- The function `ft_putnbr` is used to print the integers, and `write` is used to print the characters between the numbers (such as " x " and " = ").
+*/
 int	ft_atoi(char *str)
 {
 	int i = 0, res = 0; 
@@ -55,7 +26,6 @@ int	ft_atoi(char *str)
 	return (res);
 }
 
-//putnbr
 void	ft_putnbr(int nbr)
 {
 	if (nbr >= 10)
@@ -64,7 +34,6 @@ void	ft_putnbr(int nbr)
 	write (1, &c, 1);
 }
 
-//
 int main(int ac, char **av)
 {
 	if (ac != 2)
