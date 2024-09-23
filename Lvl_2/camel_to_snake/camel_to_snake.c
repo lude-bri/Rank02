@@ -1,25 +1,21 @@
 /*
-Assignment name  : camel_to_snake
-Expected files   : camel_to_snake.c
-Allowed functions: malloc, realloc, write
---------------------------------------------------------------------------------
+	camel_to_snake
 
-Write a program that takes a single string in lowerCamelCase format
-and converts it into a string in snake_case format.
+	This program takes a string as an argument and converts any uppercase letters to lowercase.
+	Each uppercase letter is preceded by an underscore ('_') when printed.
+	Lowercase letters and non-alphabetic characters are printed as they are.
 
-A lowerCamelCase string is a string where each word begins with a capital letter
-except for the first one.
-
-A snake_case string is a string where each word is in lower case, separated by
-an underscore "_".
-
-Examples:
-$>./camel_to_snake "hereIsACamelCaseWord"
-here_is_a_camel_case_word
-$>./camel_to_snake "helloWorld" | cat -e
-hello_world$
-$>./camel_to_snake | cat -e
-$
+	- We check if the number of arguments (`argc`) is 2, meaning the program is called with one argument.
+	- If valid:
+		- We initialize an index `i` to 0 to iterate through the string (`argv[1]`).
+		- The loop runs while the current character in the string (`argv[1][i]`) is not null:
+			- If the character is an uppercase letter ('A' to 'Z'):
+				- First, write an underscore ('_') to the standard output.
+				- Convert the uppercase letter to lowercase by adding 32 to its ASCII value.
+			- Write the current (or modified) character to the standard output.
+			- Increment `i` to move to the next character.
+	- After all characters have been processed, print a newline (`'\n'`).
+	- Finally, return `0` to indicate successful execution.
 */
 
 #include <unistd.h>
