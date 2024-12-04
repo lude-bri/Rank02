@@ -33,7 +33,7 @@ int	*ft_range(int start, int end)
 	int range;
 	int i = 0;
 
-	range = abs(end - start);
+	range = abs(end - start) + 1;
 	arr = malloc(sizeof(int) * range);
 
 	while (i < range)
