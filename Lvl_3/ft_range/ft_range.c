@@ -40,7 +40,7 @@ int	*ft_range(int start, int end)
 	{
 		if (start < end)
 			arr[i] = start++;
-		else (end > start)
+		else if (end > start)
 			arr[i] = start--;
 		i++;
 	}
