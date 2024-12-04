@@ -40,9 +40,30 @@ int	*ft_range(int start, int end)
 	{
 		if (start < end)
 			arr[i] = start++;
-		else if (end > start)
+		else
 			arr[i] = start--;
 		i++;
 	}
 	return (arr);
+}
+
+int	main(void)
+{
+	int	*tab;
+	int	idx;
+	int	start;
+	int	end;
+	int	size;
+
+	idx = 0;
+	start = -5;
+	end = 5;
+	tab = ft_range(start, end);
+	size = abs(end - start) + 1;
+	while (idx < size)
+	{
+		printf(" [%i] ", tab[idx]);
+		idx++;
+	}
+	printf("\n");
 }
